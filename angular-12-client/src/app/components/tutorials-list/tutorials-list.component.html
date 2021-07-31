@@ -82,7 +82,7 @@
     <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
       Remove All
     </button>
-
+    <a routerLink="/add"><button class="m-3 btn btn-sm btn-success" >Add Tutorial</button></a>
     Items per Page:
     <select (change)="handlePageSizeChange($event)">
       <option *ngFor="let size of pageSizes" [ngValue]="size">
