@@ -69,7 +69,9 @@
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as {{ this.roles }}.
+      Logged In Successful
     </div>
+    <H5 *ngIf="!isLoggedIn"><strong> Register new account here now.</strong></H5>
+    <a  *ngIf="!isLoggedIn" href="/register" class="btn btn-success" routerLink="/register">Register</a>
   </div>
 </div>
