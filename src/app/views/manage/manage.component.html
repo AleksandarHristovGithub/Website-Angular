@@ -1,0 +1,90 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<section class="my-5 p-5">
+  <a routerLink="/home" class="btn btn-danger btn-lg">Back</a>
+  <hr class="my-5">
+  <div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Users</h3>
+    <div class="card-body">
+      <div id="users" class="table-editable">
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Username</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">State</th>
+            <th class="text-center">Country</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Option</th>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td class="pt-3-half" contenteditable="true">{{ user.username }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.firstName }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.lastName }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.email }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.state }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.country }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.address }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ user.type }}</td>
+            <td>
+              <span class="table-remove"><a (click)="onDeleteUser(user._id)" class="btn btn-danger btn-rounded btn-sm my-0" *ngIf="user.type !== 'Admin'">Delete</a></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr class="my-5">
+  <div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Posts</h3>
+    <div class="card-body">
+      <div id="posts" class="table-editable">
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Title</th>
+            <th class="text-center">Content</th>
+            <th class="text-center">Username</th>
+            <th class="text-center">Image</th>
+            <th class="text-center">Option</th>
+          </tr>
+          <tr *ngFor="let post of posts">
+            <td class="pt-3-half" contenteditable="true">{{ post.title }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ post.content }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ post.username }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ post.imagePath }}</td>
+            <td>
+              <span class="table-remove"><a (click)="onDeletePost(post._id)" class="btn btn-danger btn-rounded btn-sm my-0">Delete</a></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr class="my-5">
+  <div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Comments</h3>
+    <div class="card-body">
+      <div id="comments" class="table-editable">
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Content</th>
+            <th class="text-center">Username</th>
+            <th class="text-center">Option</th>
+          </tr>
+          <tr *ngFor="let comment of comments">
+            <td class="pt-3-half" contenteditable="true">{{ comment.content }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ comment.username }}</td>
+            <td>
+              <span class="table-remove"><a (click)="onDeleteComment(comment._id)" class="btn btn-danger btn-rounded btn-sm my-0">Delete</a></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr class="my-5">
+</section>

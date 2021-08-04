@@ -1,0 +1,51 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<section class="my-5 p-5">
+
+  <h2 class="h1-responsive font-weight-bold text-center my-3">Recent posts</h2>
+  <p class="text-center dark-grey-text w-responsive mx-auto mb-5">
+    Welcome to posts stream!
+  </p>
+  <hr class="my-5">
+  <div *ngFor="let post of posts">
+    <div class="row">
+      <div class="col-lg-5 col-xl-4">
+        <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+          <img class="img-fluid" [src]="post.imagePath" alt="Sample image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-7 col-xl-8">
+        <a style="cursor: pointer;" (click)="onPostDetail(post._id)">
+          <h3 class="font-weight-bold mb-3"><strong>{{ post.title }}</strong></h3>
+        </a>
+        <p class="dark-grey-text">{{ post.content }}</p>
+        <p>by <a class="font-weight-bold" (click)="onGetUserPosts(post.userId)">{{ post.username }}</a>, {{ post.dateCreated.toString().slice(0,10) }}</p>
+        <div style="display: inline-flex;">
+          <a class="btn btn-primary btn-md" [routerLink]="['/stream', post._id]">Read more</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <p class="align-self-center" style="margin: 0; color: red;" *ngIf="userId === null">You must login to read more</p>
+        </div>
+        <br>
+        <div style="display: flex;">
+          <a class="btn btn-primary btn-md" [routerLink]="['/stream', post._id, 'comment']">Comment</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <p class="align-self-center" style="margin: 0; color: red;" *ngIf="userId === null">You must login to comment</p>
+        </div>
+        <br>
+        <div style="display: flex;" *ngIf="userId !== null && user.type === 'Admin'">
+          <a class="btn btn-danger btn-md" (click)="onDelete(post._id)">Delete</a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5" *ngIf="posts.length > 0">
+  </div>
+  <div class="text-center">
+    <a class="btn btn-primary btn-lg" routerLink="/stream/new" *ngIf="userId !== null && (user.type === 'membership' || user.type === 'Admin')">New Post</a>
+  </div>
+</section>
+

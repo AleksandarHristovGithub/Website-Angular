@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar fixed-top bc-blue">
+  <div class="row container-fluid">
+    <div class="col-sm-4 d-none d-sm-block">
+      <div class="container-fluid">
+        <div class="navbar-brand navbar-dark">
+          <a href="website-list.html" class="float-left text-white">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="text-white-bold" href="#">
+            Websites
+          </a>
+
+        </div>
+        <a href="website-new.html" class="icon-padding float-right text-white">
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white-bold" href="#">
+          Edit Website
+        </a>
+        <a href="website-list.html" class="icon-padding float-right text-white">
+          <i class="fas fa-check"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid container-align">
+  <div class="row">
+    <div class="col-sm-4 d-none d-sm-block">
+      <ul class="list-group cl-list-group-borderless">
+        <li class="list-group-item cl-list-item-borderless">
+          <a href="#" class="text-blue">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="page-list.html" class="text-blue">Blogging App</a>
+        </li>
+        <li class="list-group-item cl-list-item-borderless">
+          <a href="#" class="text-blue">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="page-list.html" class="text-blue">Address Book App</a>
+        </li>
+        <li class="list-group-item cl-list-item-borderless">
+          <a href="#" class="text-blue">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="page-list.html" class="text-blue">Script Testing App</a>
+        </li>
+        <li class="list-group-item cl-list-item-borderless">
+          <a href="#" class="text-blue">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="page-list.html" class="text-blue">Blogger</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-7">
+      <form>
+        <div class="form-group">
+          <label for="website-name">Website Name</label>
+          <input type="text" class="form-control" id="website-name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="website-description">Website Description</label>
+          <textarea id="website-description" class="form-control" rows="5" placeholder="Description"></textarea>
+        </div>
+        <button class="btn btn-danger btn-block">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom bc-blue">
+  <div class="container-fluid">
+    <div class="ml-auto">
+      <a href="profile.html" class="text-white float-right">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<section class="my-5 p-5">
+  <a routerLink="./new" class="btn btn-primary btn-lg">New Comment</a>
+  <a routerLink="/stream" class="btn btn-danger btn-lg">Back</a>
+  <hr class="my-5">
+  <div *ngFor="let comment of comments">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mdb-feed">
+          <div class="news">
+            <div class="excerpt">
+              <div class="brief">
+                <a class="font-weight-bold" (click)="onGetUserPosts(comment.username)">{{ comment.username }}</a>
+                commented on {{ comment.dateCreated.toString().slice(0,10) }}:
+                <p class="dark-grey-text">{{ comment.content }}</p>
+              </div>
+              <div style="display: flex;" *ngIf="userId !== null && user.type === 'Admin'">
+                <a class="btn btn-danger btn-md" (click)="onDelete(comment._id)">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5" *ngIf="comments.length > 0">
+  </div>
+</section>

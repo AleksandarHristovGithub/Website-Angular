@@ -1,0 +1,71 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Register</h5>
+          <form class="form-signin" (ngSubmit)="onRegister()" #f='ngForm'>
+            <div class="form-label-group">
+              <input type="text" id="username" class="form-control" name="username" placeholder="Username" required [(ngModel)]="regusername" #username="ngModel">
+              <label for="username">Username</label>
+              <span class="help-block" *ngIf="!username.valid && username.touched">
+                Please enter a valid username
+              </span>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password" id="password" class="form-control" name="password" placeholder="Password" required [(ngModel)]="regpassword" #password="ngModel">
+              <label for="password">Password</label>
+              <span class="help-block" *ngIf="!password.valid && password.touched">
+                Please enter a valid password
+              </span>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password" id="verify" class="form-control" name="verify" placeholder="Confirm Password" required [(ngModel)]="regverify" #verify="ngModel">
+              <label for="verify">Confirm Password</label>
+              <span class="help-block" *ngIf="(regpassword !== regverify || !verify.valid) && verify.touched">
+                Please enter the same password
+              </span>
+            </div>
+
+            <div class="form-label-group">
+              <input type="email" id="email" class="form-control" name="email" placeholder="Email address" required [(ngModel)]="regemail" #email="ngModel">
+              <label for="email">Email address</label>
+              <span class="help-block" *ngIf="!email.valid && email.touched">
+                Please enter a valid email
+              </span>
+            </div>
+
+            <div class="form-label-group">
+              <input type="text" id="inputFirstName" name="inputFirstName" class="form-control" placeholder="First Name" [(ngModel)]="regFirstName">
+              <label for="inputFirstName">First Name</label>
+            </div>
+
+            <div class="form-label-group">
+              <input type="text" id="inputLastName" name="inputLastName" class="form-control" placeholder="Last Name" [(ngModel)]="regLastName">
+              <label for="inputLastName">Last Name</label>
+            </div>
+
+            <span class="help-block" *ngIf="!type.valid">
+              Please choose one type:&nbsp;&nbsp;
+            </span>
+            <label>
+              <input type="radio" [(ngModel)]="regtype" name="type" value="Admin" required #type="ngModel">Admin
+            </label>
+            <label>
+              <input type="radio" [(ngModel)]="regtype" name="type" value="User" #type="ngModel">User
+            </label>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" [disabled]="!f.valid || regpassword !== regverify">Register</button>
+            <button class="btn btn-lg btn-danger btn-block text-uppercase" routerLink="/login" type="button">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

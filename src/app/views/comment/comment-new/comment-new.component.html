@@ -1,0 +1,26 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Comment</h5>
+          <form class="form-signin" (ngSubmit)="onComment()" #f='ngForm'>
+            <div class="form-label-group">
+              <input type="text" id="content" class="form-control" name="content" placeholder="{{ comment.content }}" required [(ngModel)]="comment.content" #content="ngModel">
+              <label for="content">Content</label>
+              <span class="help-block" *ngIf="!content.valid && content.touched">
+                Please enter some contents
+              </span>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" [disabled]="!f.valid">Submit</button>
+            <button class="btn btn-lg btn-danger btn-block text-uppercase" type="button" routerLink="../">Back</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

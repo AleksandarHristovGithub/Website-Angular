@@ -1,0 +1,57 @@
+<div *ngIf="header.visible">
+  <app-header></app-header>
+</div>
+
+<section class="my-5 p-5">
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Join Us</h2>
+  <p class="text-center w-responsive mx-auto pb-5">Join our community and make your own contribution.</p>
+  <div class="row">
+    <div class="col-lg-5 mb-lg-0 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="md-form form-label-group">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="user.firstName" required>
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="md-form form-label-group">
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="user.lastName" required>
+            <label for="lastName">Last Name</label>
+          </div>
+          <div class="md-form form-label-group">
+            <i class="fas fa-tag prefix grey-text"></i>
+            <input type="text" id="address" name="address" class="form-control" [(ngModel)]="user.address" required>
+            <label for="address">Address</label>
+          </div>
+          <div class="md-form form-label-group">
+            <i class="fas fa-tag prefix grey-text"></i>
+            <input type="text" id="state" name="state" class="form-control" [(ngModel)]="user.state">
+            <label for="state">State</label>
+          </div>
+          <div class="md-form form-label-group">
+            <i class="fas fa-tag prefix grey-text"></i>
+            <input type="text" id="country" name="country" class="form-control" [(ngModel)]="user.country">
+            <label for="country">Country</label>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-light-blue" (click)="onSubmit()">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 500px; width: 800px;">
+        <!--<iframe src="https://maps.google.com/maps?q=Manhatan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"-->
+                <!--style="border:0" allowfullscreen></iframe>-->
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
