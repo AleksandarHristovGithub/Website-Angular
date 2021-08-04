@@ -13,9 +13,9 @@
           <div class="news">
             <div class="excerpt">
               <div class="brief">
-                <a class="font-weight-bold" (click)="onGetUserPosts(comment.username)">{{ comment.username }}</a>
-                commented on {{ comment.dateCreated.toString().slice(0,10) }}:
-                <p class="dark-grey-text">{{ comment.content }}</p>
+                <a class="font-weight-bold white-text" (click)="onGetUserPosts(comment.username)">{{ comment.username }}
+                commented on {{ comment.dateCreated.toString().slice(0,10) }}:</a>
+                <p class="white-text">{{ comment.content }}</p>
               </div>
               <div style="display: flex;" *ngIf="userId !== null && user.type === 'Admin'">
                 <a class="btn btn-danger btn-md" (click)="onDelete(comment._id)">Delete</a>

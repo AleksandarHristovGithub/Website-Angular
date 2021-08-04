@@ -6,7 +6,7 @@
   <a routerLink="/home" class="btn btn-danger btn-lg">Back</a>
   <hr class="my-5">
   <div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Users</h3>
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4 ">Users</h3>
     <div class="card-body">
       <div id="users" class="table-editable">
         <table class="table table-bordered table-responsive-md table-striped text-center">
@@ -55,7 +55,7 @@
             <td class="pt-3-half" contenteditable="true">{{ post.title }}</td>
             <td class="pt-3-half" contenteditable="true">{{ post.content }}</td>
             <td class="pt-3-half" contenteditable="true">{{ post.username }}</td>
-            <td class="pt-3-half" contenteditable="true">{{ post.imagePath }}</td>
+            <td class="pt-3-half" contenteditable="true">{{ post.imagePath.toString().slice(0,50) }}</td>
             <td>
               <span class="table-remove"><a (click)="onDeletePost(post._id)" class="btn btn-danger btn-rounded btn-sm my-0">Delete</a></span>
             </td>

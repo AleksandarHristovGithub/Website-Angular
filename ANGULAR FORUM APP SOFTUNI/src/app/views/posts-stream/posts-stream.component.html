@@ -4,8 +4,8 @@
 
 <section class="my-5 p-5">
 
-  <h2 class="h1-responsive font-weight-bold text-center my-3">Recent posts</h2>
-  <p class="text-center dark-grey-text w-responsive mx-auto mb-5">
+  <h2 class="white-text h1-responsive font-weight-bold text-center my-3">Recent posts</h2>
+  <p class="text-center white-text w-responsive mx-auto mb-5">
     Welcome to posts stream!
   </p>
   <hr class="my-5">
@@ -21,10 +21,10 @@
       </div>
       <div class="col-lg-7 col-xl-8">
         <a style="cursor: pointer;" (click)="onPostDetail(post._id)">
-          <h3 class="font-weight-bold mb-3"><strong>{{ post.title }}</strong></h3>
+          <h3 class=" white-text font-weight-bold mb-3"><strong>{{ post.title }}</strong></h3>
         </a>
-        <p class="dark-grey-text">{{ post.content }}</p>
-        <p>by <a class="font-weight-bold" (click)="onGetUserPosts(post.userId)">{{ post.username }}</a>, {{ post.dateCreated.toString().slice(0,10) }}</p>
+        <p class="white-text">{{ post.content }}</p>
+        <p class="white-text">by <a class="white-text font-weight-bold" (click)="onGetUserPosts(post.userId)">{{ post.username }}</a>, {{ post.dateCreated.toString().slice(0,10) }}</p>
         <div style="display: inline-flex;">
           <a class="btn btn-primary btn-md" [routerLink]="['/stream', post._id]">Read more</a>
           &nbsp;&nbsp;&nbsp;&nbsp;

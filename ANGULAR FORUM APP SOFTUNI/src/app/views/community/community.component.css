@@ -16,3 +16,6 @@ agm-map {
   height: 500px;
   width: 800px;
 }
+.card-body{
+  background-color: darkgrey;
+}
