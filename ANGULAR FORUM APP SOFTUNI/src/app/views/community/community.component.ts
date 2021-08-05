@@ -52,7 +52,7 @@ export class CommunityComponent implements OnInit {
     this.http.get<{ ip: string }>('https://jsonip.com')
       .subscribe(data => {
         // console.log('th data', data);
-        this.http.get<Location>('https://geo.ipify.org/api/v1?apiKey=at_oVTOjvWzfktZRJDeQsm1wwVWJSOLL&ipAddress=' + data.ip)
+        this.http.get<Location>('https://geo.ipify.org/api/v1?apiKey=at_0CSaKPhLAnpeSobcUHnEM2aq450RX&ipAddress=' + data.ip)
             .subscribe(data => {
               this.lat = data.location.lat;
               this.lng = data.location.lng;
