@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-const port = process.env.PORT || '3200';
+const port = process.env.PORT || '80';
 app.set('port', port);
 
 require('./server/app')(app);
