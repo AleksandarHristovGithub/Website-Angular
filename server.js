@@ -42,7 +42,7 @@ var connectionString = 'mongodb+srv:<User>:<User>@cluster0.ol0if.mongodb.net/tes
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const client = mongoose.connect("mongodb://localhost:27017/[test]", {
+const client = mongoose.connect(connectionString, {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
