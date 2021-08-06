@@ -1,6 +1,7 @@
 {
-  "name": "my-project",
-  "version": "0.0.0",
+  "name": "myapp",
+  "description": "a really cool app",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
