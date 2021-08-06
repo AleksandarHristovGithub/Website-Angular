@@ -2,12 +2,12 @@ module.exports = app => {
 
   var postModel = require('../models/post/post.model.server');
 
-  app.post("/api/user/:uid/post", createPost);
-  app.get("/api/posts", findAllPosts);
-  app.get("/api/user/:uid/post", findAllPostsForUser);
-  app.get("/api/post/:pid", findPostById);
-  app.put("/api/post/:pid", updatePost);
-  app.delete("/api/post/:pid", deletePost);
+  app.post("api/user/:uid/post", createPost);
+  app.get("api/posts", findAllPosts);
+  app.get("api/user/:uid/post", findAllPostsForUser);
+  app.get("api/post/:pid", findPostById);
+  app.put("api/post/:pid", updatePost);
+  app.delete("api/post/:pid", deletePost);
 
   function createPost(req, res) {
     const uid = req.params['uid'];

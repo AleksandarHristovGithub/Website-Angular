@@ -2,12 +2,12 @@ module.exports = app => {
 
   var commentModel = require('../models/comment/comment.model.server');
 
-  app.post("/api/post/:pid/comment-list", createComment);
-  app.get("/api/comments", findAllComments);
-  app.get("/api/post/:pid/comment-list", findAllCommentsForPost);
-  app.get("/api/comment-list/:cid", findCommentById);
-  app.put("/api/comment-list/:cid", updateComment);
-  app.delete("/api/comment-list/:cid", deleteComment);
+  app.post("api/post/:pid/comment-list", createComment);
+  app.get("api/comments", findAllComments);
+  app.get("api/post/:pid/comment-list", findAllCommentsForPost);
+  app.get("api/comment-list/:cid", findCommentById);
+  app.put("api/comment-list/:cid", updateComment);
+  app.delete("api/comment-list/:cid", deleteComment);
 
   function createComment(req, res) {
     const pid = req.params['pid'];

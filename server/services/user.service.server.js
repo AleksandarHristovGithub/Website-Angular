@@ -6,17 +6,17 @@ module.exports = app => {
   var FacebookStrategy = require('passport-facebook').Strategy;
   var bcrypt = require('bcrypt-nodejs');
 
-  app.post("/api/user", createUser);
-  app.get("/api/user", findUserByUsername);
-  app.get("/api/user", findUserByCredentials);
-  app.get("/api/user/:uid", findUserById);
-  app.put("/api/user/:uid", updateUser);
-  app.delete("/api/user/:uid", deleteUser);
-  app.post("/api/login", passport.authenticate('local'), login);
-  app.post("/api/logout", logout);
-  app.post("/api/register", register);
-  app.post("/api/loggedIn", loggedIn);
-  app.get("/api/users", findAllUsers);
+  app.post("api/user", createUser);
+  app.get("api/user", findUserByUsername);
+  app.get("api/user", findUserByCredentials);
+  app.get("api/user/:uid", findUserById);
+  app.put("api/user/:uid", updateUser);
+  app.delete("api/user/:uid", deleteUser);
+  app.post("api/login", passport.authenticate('local'), login);
+  app.post("api/logout", logout);
+  app.post("api/register", register);
+  app.post("api/loggedIn", loggedIn);
+  app.get("api/users", findAllUsers);
 
   var facebookConfig = {
     clientID: '1145657725842868',
